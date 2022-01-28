@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koreait.springbootboard.board.BoardMapper">
+    <select id="selBoardList" resultType="BoardVO">
+        select A.iboard,A.title,A.ctnt,A.iuser,A.hits,A.rdt,B.nm as writernm from t_board A
+        join t_user B
+        on B.iuser = A.iuser
+        where icategory = ${icategory} and isdel = 0
+        order by A.iboard DESC
+    </select>
+
+
+
+</mapper>

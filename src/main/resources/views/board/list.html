@@ -1,0 +1,13 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="temp/thymeleaf_layout">
+<head>
+    <link rel="stylesheet" th:href="@{/css/board/list.css}">
+    <title>List</title>
+    <script defer th:src="@{/js/board/list.js}"></script>
+</head>
+<th:block layout:fragment="content">
+    <h1>List</h1>
+    <span th:text="${param.icategory}"></span>
+</th:block>

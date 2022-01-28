@@ -1,13 +1,12 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="temp/thymeleaf_layout"
->
+      layout:decorate="temp/thymeleaf_layout">
 <head>
     <link rel="stylesheet" th:href="@{/css/user/login.css}">
     <title>Login</title>
     <!--@{}는 standard URL 이라고 한다.-->
-    <script defer th:src="@{/css/user/login.js}"></script>
+    <script defer th:src="@{/js/user/login.js}"></script>
 </head>
 <th:block layout:fragment="content">
     <h1>Login</h1>
