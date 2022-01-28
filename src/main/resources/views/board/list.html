@@ -8,6 +8,10 @@
     <script defer th:src="@{/js/board/list.js}"></script>
 </head>
 <th:block layout:fragment="content">
-    <h1>List</h1>
+    <h1 id="data" data-icategory=th:text="${param.icategory}">List</h1>
     <span th:text="${param.icategory}"></span>
+    <script th:inline="javascript">
+        let icategory = [[${param.icategory}]];
+        console.log(icategory);
+    </script>
 </th:block>

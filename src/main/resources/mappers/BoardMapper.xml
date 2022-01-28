@@ -9,6 +9,12 @@
         order by A.iboard DESC
     </select>
 
+    <select id="selBoard" resultType="BoardVO">
+        select A.iboard,A.title,A.ctnt,A.iuser,A.hits,A.lastip,A.icategory,A.rdt,A.mdt,B.nm as writernm from t_board A
+        join t_user B
+        on B.iuser = A.iuser
+        where iboard = ${iboard}
+    </select>
 
 
 </mapper>

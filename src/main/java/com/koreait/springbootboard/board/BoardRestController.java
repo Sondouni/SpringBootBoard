@@ -18,8 +18,13 @@ public class BoardRestController {
     private BoardService service;
 
     @GetMapping("/{icategory}")
-    private List<BoardVO> getList(@PathVariable int icategory, BoardDTO dto){
+    public List<BoardVO> getList(@PathVariable int icategory, BoardDTO dto){
         dto.setIcategory(icategory);
         return service.selBoardList(dto);
+    }
+    @GetMapping("/detail/{iboard}")
+    public BoardVO getBoard(@PathVariable int iboard,BoardDTO dto){
+        dto.setIboard(iboard);
+        return service.selBoard(dto);
     }
 }

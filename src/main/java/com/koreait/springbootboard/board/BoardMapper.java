@@ -11,4 +11,6 @@ import java.util.List;
 public interface BoardMapper {
     //icategory별 리스트 가져오기
     List<BoardVO> selBoardList(BoardDTO dto);
+    //iboard별 board 가져오기
+    BoardVO selBoard(BoardDTO dto);
 }

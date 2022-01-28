@@ -17,4 +17,8 @@ public class BoardService {
     List<BoardVO> selBoardList(BoardDTO dto){
         return mapper.selBoardList(dto);
     }
+    //iboard별 board
+    BoardVO selBoard(BoardDTO dto){
+        return mapper.selBoard(dto);
+    }
 }
