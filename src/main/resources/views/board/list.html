@@ -1,6 +1,7 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="temp/thymeleaf_layout">
 <head>
     <link rel="stylesheet" th:href="@{/css/board/list.css}">
@@ -10,6 +11,12 @@
 <th:block layout:fragment="content">
     <h1 id="data" data-icategory=th:text="${param.icategory}">List</h1>
     <span th:text="${param.icategory}"></span>
+    <div sec:authorize="isAuthenticated()">
+        <a th:href="@{/board/write(icategory=${param.icategory})}">
+            <button class="btn btn-primary" type="submit">글쓰기</button>
+        </a>
+    </div>
+    <span th:text="${session.loginUser}"></span>
     <script th:inline="javascript">
         let icategory = [[${param.icategory}]];
         console.log(icategory);

@@ -21,13 +21,15 @@ public class UserController {
     public void login(@ModelAttribute("entity") UserEntity entity){
 
     }
-
+/*
     @PostMapping("/login")
     public String loginProc(UserEntity entity){
         int result = service.selUser(entity);
         System.out.println(result);
         return "redirect:/";
     }
+
+ */
 
     @GetMapping("/join")
     public void join(@ModelAttribute("entity") UserEntity entity){
@@ -41,11 +43,15 @@ public class UserController {
         System.out.println(result);
         return "redirect:login";
     }
-
+/*
     @GetMapping("/logout")
     public String logOut(){
         userUtils.makeLogout();
         return "redirect:/";
     }
+
+
+ */
+
 
 }

@@ -4,6 +4,7 @@ import com.koreait.springbootboard.MyUserUtils;
 import com.koreait.springbootboard.user.model.UserEntity;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,10 +13,14 @@ public class UserService {
     private UserMapper mapper;
     @Autowired
     private MyUserUtils userUtils;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public int join(UserEntity entity){
 
-        entity.setUpw(BCrypt.hashpw(entity.getUpw(),BCrypt.gensalt()));
+//        BCrypt.hashpw(entity.getUpw(),BCrypt.gensalt())) ->
+        entity.setUpw(passwordEncoder.encode(entity.getUpw()));
+
 
         try {
             return mapper.insUser(entity);
